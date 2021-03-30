@@ -1,0 +1,26 @@
+<form>
+    <input type="text" class="form-control bg-light" name=txtjob [(ngModel)]="txtjob" placeholder="Enter the item"/>
+    <input type="submit" class="btn btn-danger d-grid gap-2 col-4 mx-auto my-5" value="Add Todo" (click)="Add(txtjob)" />
+</form>
+
+<div class="todo " *ngFor="let todo of todos; let i =index;" class="{{ (todo.completed ? 'done': '')  }}">
+   
+
+    <div class="row text-white py-3">
+        <div class="col">
+            <div class="id pe-2"> {{ i }} </div>
+        </div>
+        <div class="col">
+            <div class="content pe-3" (click)="toggleDone(i)" > {{ todo.content}} </div>
+        </div>
+        <div class="col">
+            <a class="delete d-grid gap-2 col-1 mx-auto fa-lg text-danger text-decoration-none " (click)="deleteTodo(i)"> <i class="fa fa-trash" aria-hidden="true"></i></a>
+        </div>
+
+    </div>
+   
+    
+    
+    
+
+</div>
